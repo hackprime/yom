@@ -77,13 +77,13 @@ In commands of this section you need to use following options:
 * ``--description`` - short description
 * ``--homepage``
 * ``--callback`` - callback url
-* ``--scope`` (or ``-S``) - right for application (use yom scopes as reference)
+* ``--scope`` (or ``-S``) - right for application (use ``yom scopes`` as reference)
 
-If you passing scope name without colon - all available scopes in selected namespace will be touched. E.g. passing ``-scope fotki`` has the same effect as ``-s fotki:update -s fotki:delete -s fotki:write -s fotki:read``
+If you passing scope name without colon - all available scopes in selected namespace will be touched. E.g. passing ``--scope fotki`` have the same effect as ``-s fotki:update -s fotki:delete -s fotki:write -s fotki:read``
 
 #### yom create
 
-Creates new application. --title and at least one --scope (or shortly -s) are mandatory options
+Creates new application. ``--title`` and at least one ``--scope`` (or shortly ``-s``) are required options.
 
 ```
 $ yom create --title='App3' --description='Very cool app' --homepage='https://app3.example.com' --callback='http://app3.example.com/callback' -s fotki -s login:email
@@ -103,9 +103,9 @@ The "App3" application has been created
 
 #### yom edit
 
-Changes any of params of your application.
-To uncheck scope you can use --unscope (of -S) option.
-Note that at least one scope should remain after edition will be complete.
+Changes any of parameters of an application.
+To uncheck scope you can use ``--unscope`` (of ``-S``) option.
+Keep in mind that an application must have at least one scope. If your submition won't remain any scope, an error will be raised.
 
 ```
 $ yom edit 0848baa9169e4e8ba2a9e3e1417cf3f3 --title='App 3 Extended' -S fotki -s postoffice:all
